@@ -63,4 +63,3 @@ class WitnessPlugin implements Plugin<Project> {
         }
     }
 }
-
