@@ -5,6 +5,12 @@ dependencies {
     compile localGroovy()
 }
 
-sourceCompatibility = '1.7'
-targetCompatibility = '1.7'
+tasks.withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}
 
+jar.doLast { task ->
+    ant.checksum file: task.archivePath
+    println "md5=" + file("build/libs/gradle-witness.jar.MD5").text.trim()
+}

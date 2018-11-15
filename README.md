@@ -33,8 +33,8 @@ In the remote directory, the artifact consists of a POM file and a jar or aar, a
 sha1sum hash values for those files.
 
 When gradle retrieves the artifact, it will also retrieve the md5sum and sha1sums to verify that
-they match the calculated md5sum and sha1sum of the retrieved files.  The problem, obviously, is 
-that if someone is able to compromise the remote maven repository and change the jar/aar for a 
+they match the calculated md5sum and sha1sum of the retrieved files.  The problem, obviously, is
+that if someone is able to compromise the remote maven repository and change the jar/aar for a
 dependency to include some malicious functionality, they could just as easily change the md5sum
 and sha1sum values the repository advertises as well.
 
